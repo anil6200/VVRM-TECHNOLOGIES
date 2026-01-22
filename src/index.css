@@ -1,0 +1,23 @@
+@import "tailwindcss";
+@theme {
+  --color-vvrm-dark: #050810;
+  --color-vvrm-card: #0A0F1C;
+  --color-vvrm-cyan: #00C2FF;
+  --color-vvrm-blue: #0055FF;
+  --font-sans: 'Inter', sans-serif;
+}
+// Global Styles to match the VVRM Technology theme
+body {
+  background-color: var(--color-vvrm-dark);
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+.snap-child {
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  will-change: transform, opacity;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
