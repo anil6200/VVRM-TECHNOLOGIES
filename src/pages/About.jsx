@@ -1,13 +1,20 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { FiTarget, FiEye, FiCheck, FiAward, FiUsers, FiGlobe } from 'react-icons/fi';
+import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import {
+  FiTarget,
+  FiEye,
+  FiCheck,
+  FiAward,
+  FiUsers,
+  FiGlobe,
+} from "react-icons/fi";
 const teamImages = [
-  '/images/about/sec2img1.png',
-  '/images/about/sec2img2.png',
-  '/images/about/sec2img3.png',
-  '/images/about/sec2img4.png',
-  '/images/about/sec2img5.png',
+  "/images/about/sec2img1.png",
+  "/images/about/sec2img2.png",
+  "/images/about/sec2img3.png",
+  "/images/about/sec2img4.png",
+  "/images/about/sec2img5.png",
 ];
 const About = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -15,7 +22,7 @@ const About = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % teamImages.length);
-    }, 1000); //  
+    }, 1000); //
     return () => clearInterval(timer);
   }, []);
   const fadeInUp = {
@@ -23,15 +30,15 @@ const About = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 1.2, ease: "easeOut" }
-    }
+      transition: { duration: 1.2, ease: "easeOut" },
+    },
   };
   const cardDropVariant = {
     hidden: {
       y: -150,
       opacity: 0,
       rotate: -10,
-      scale: 0.9
+      scale: 0.9,
     },
     visible: {
       y: 0,
@@ -41,16 +48,16 @@ const About = () => {
       transition: {
         type: "spring",
         bounce: 0.4,
-        duration: 1.5
-      }
-    }
+        duration: 1.5,
+      },
+    },
   };
   const hover3D = {
     rotateX: 10,
     rotateY: -5,
     scale: 1.05,
     boxShadow: "0px 20px 50px rgba(0, 194, 255, 0.2)",
-    transition: { duration: 0.4 }
+    transition: { duration: 0.4 },
   };
   const videoRef = useRef(null);
   useEffect(() => {
@@ -71,19 +78,19 @@ const About = () => {
             playsInline
             preload="auto"
             onCanPlayThrough={() => setIsVideoLoaded(true)}
-            className={`w-full h-full object-cover transition-opacity duration-700 ease-in-out ${isVideoLoaded ? 'opacity-80' : 'opacity-0'
-              }`}
+            className={`w-full h-full object-cover transition-opacity duration-700 ease-in-out ${
+              isVideoLoaded ? "opacity-80" : "opacity-0"
+            }`}
             poster="/images/image.png"
           >
-            <source
-              src="/videos/abouthero.mp4"
-              type="video/mp4"
-            />
+            <source src="/videos/abouthero.mp4" type="video/mp4" />
           </video>
           {!isVideoLoaded && (
             <div
               className="absolute inset-0 bg-cover bg-center opacity-75 transition-opacity duration-700"
-              style={{ backgroundImage: "url('/images/about-hero-poster.jpg')" }}
+              style={{
+                backgroundImage: "url('/images/about-hero-poster.jpg')",
+              }}
             ></div>
           )}
           <div className="absolute inset-x-0 bottom-0 h-64 bg-linear-to-t from-vvrm-dark via-vvrm-dark/60 to-transparent z-10"></div>
@@ -111,7 +118,9 @@ const About = () => {
               </span>
             </h1>
             <p className="text-[19px] text-gray-200 max-w-3xl mx-auto font-serif leading-relaxed tracking-wide">
-              VVRM Technologies is more than just an IT company. We are a team of passionate developers, designers, and strategists dedicated to transforming businesses through code.
+              VVRM Technologies is more than just an IT company. We are a team
+              of passionate developers, designers, and strategists dedicated to
+              transforming businesses through code.
             </p>
           </motion.div>
         </div>
@@ -136,8 +145,9 @@ const About = () => {
                 key={index}
                 src={img}
                 alt="Our Journey"
-                className={`absolute inset-0 w-full h-full object-cover rounded-xl shadow-2xl transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100' : 'opacity-0'
-                  }`}
+                className={`absolute inset-0 w-full h-full object-cover rounded-xl shadow-2xl transition-opacity duration-1000 ease-in-out ${
+                  index === currentSlide ? "opacity-100" : "opacity-0"
+                }`}
               />
             ))}
             {/* Slider Dots */}
@@ -145,7 +155,11 @@ const About = () => {
               {teamImages.map((_, index) => (
                 <div
                   key={index}
-                  className={`h-1.5 rounded-full transition-all duration-300 ${index === currentSlide ? 'w-6 bg-vvrm-cyan' : 'w-2 bg-white/50'}`}
+                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                    index === currentSlide
+                      ? "w-6 bg-vvrm-cyan"
+                      : "w-2 bg-white/50"
+                  }`}
                 />
               ))}
             </div>
@@ -157,26 +171,46 @@ const About = () => {
             viewport={{ once: false }}
             transition={{ duration: 1.2, delay: 0.2 }}
           >
-            <h2 className="text-3xl font-bold font-serif text-white">Our Journey</h2>
+            <h2 className="text-3xl font-bold font-serif text-white">
+              Our Journey
+            </h2>
             <p className="text-gray-200 tracking-wider font-serif leading-relaxed">
-              Started with a vision to simplify technology, <b>VVRM Technologies</b> began its journey in a small office with big dreams. We saw a gap in the market where businesses struggled to find reliable, high-quality tech partners.
+              Started with a vision to simplify technology,{" "}
+              <b>VVRM Technologies</b> began its journey in a small office with
+              big dreams. We saw a gap in the market where businesses struggled
+              to find reliable, high-quality tech partners.
             </p>
             <p className="text-gray-200 font-sans tracking-wider leading-relaxed">
-              Today, we have grown into a full-scale digital agency, serving clients across the globe. From <b>Rohtak to the World</b>, our commitment remains the same: writing clean code, designing intuitive interfaces, and delivering results that matter.
+              Today, we have grown into a full-scale digital agency, serving
+              clients across the globe. From <b>Rohtak to the World</b>, our
+              commitment remains the same: writing clean code, designing
+              intuitive interfaces, and delivering results that matter.
             </p>
             {/* Stats Row */}
             <div className="flex gap-8 pt-4 border-t border-gray-800">
               <div>
-                <h4 className="text-3xl font-bold font-serif text-vvrm-cyan">5+</h4>
-                <p className="text-xs text-gray-300  mt-2  font-sans uppercase tracking-wide">Years Exp.</p>
+                <h4 className="text-3xl font-bold font-serif text-vvrm-cyan">
+                  5+
+                </h4>
+                <p className="text-xs text-gray-300  mt-2  font-sans uppercase tracking-wide">
+                  Years Exp.
+                </p>
               </div>
               <div>
-                <h4 className="text-3xl font-bold font-serif text-vvrm-cyan">50+</h4>
-                <p className="text-xs mt-2 text-gray-300 font-sans uppercase tracking-wide">Projects Done</p>
+                <h4 className="text-3xl font-bold font-serif text-vvrm-cyan">
+                  50+
+                </h4>
+                <p className="text-xs mt-2 text-gray-300 font-sans uppercase tracking-wide">
+                  Projects Done
+                </p>
               </div>
               <div>
-                <h4 className="text-3xl font-bold font-serif text-vvrm-cyan">100%</h4>
-                <p className="text-xs text-gray-300 mt-2 font-sans uppercase tracking-wide">Satisfaction</p>
+                <h4 className="text-3xl font-bold font-serif text-vvrm-cyan">
+                  100%
+                </h4>
+                <p className="text-xs text-gray-300 mt-2 font-sans uppercase tracking-wide">
+                  Satisfaction
+                </p>
               </div>
             </div>
           </motion.div>
@@ -195,7 +229,7 @@ const About = () => {
                 y: -50,
                 opacity: 0,
                 rotate: -5,
-                scale: 0.9
+                scale: 0.9,
               },
               visible: {
                 y: 0,
@@ -205,9 +239,9 @@ const About = () => {
                 transition: {
                   type: "spring",
                   bounce: 0.4,
-                  duration: 1.2
-                }
-              }
+                  duration: 1.2,
+                },
+              },
             }}
             whileHover={hover3D}
           >
@@ -215,9 +249,13 @@ const About = () => {
             <div className="w-16 h-16 bg-vvrm-cyan/20 rounded-2xl flex items-center justify-center text-vvrm-cyan mb-6">
               <FiTarget size={32} />
             </div>
-            <h3 className="text-2xl font-bold font-serif text-white mb-4">Our Mission</h3>
+            <h3 className="text-2xl font-bold font-serif text-white mb-4">
+              Our Mission
+            </h3>
             <p className="text-gray-300 tracking-wider leading-relaxed relative z-10">
-              To empower businesses of all sizes with scalable, secure, and innovative technology solutions. We aim to bridge the gap between complex code and user-friendly experiences.
+              To empower businesses of all sizes with scalable, secure, and
+              innovative technology solutions. We aim to bridge the gap between
+              complex code and user-friendly experiences.
             </p>
           </motion.div>
           {/* Vision Card */}
@@ -232,7 +270,7 @@ const About = () => {
                 y: -50,
                 opacity: 0,
                 rotate: 5,
-                scale: 0.9
+                scale: 0.9,
               },
               visible: {
                 y: 0,
@@ -242,9 +280,9 @@ const About = () => {
                 transition: {
                   type: "spring",
                   bounce: 0.4,
-                  duration: 1.2
-                }
-              }
+                  duration: 1.2,
+                },
+              },
             }}
             whileHover={hover3D}
           >
@@ -252,9 +290,13 @@ const About = () => {
             <div className="w-16 h-16 bg-vvrm-blue/20 rounded-2xl flex items-center justify-center text-vvrm-blue mb-6">
               <FiEye size={32} />
             </div>
-            <h3 className="text-2xl font-bold font-serif  text-white mb-4">Our Vision</h3>
+            <h3 className="text-2xl font-bold font-serif  text-white mb-4">
+              Our Vision
+            </h3>
             <p className="text-gray-300 tracking-wider leading-relaxed relative z-10">
-              To become a globally recognized IT consultancy known for excellence, integrity, and forward-thinking innovation. We see a future where every business is digital-first.
+              To become a globally recognized IT consultancy known for
+              excellence, integrity, and forward-thinking innovation. We see a
+              future where every business is digital-first.
             </p>
           </motion.div>
         </div>
@@ -269,8 +311,12 @@ const About = () => {
             viewport={{ once: false }}
             transition={{ duration: 1 }}
           >
-            <h2 className="text-5xl font-bold font-serif text-white mb-4">Why Choose VVRM?</h2>
-            <p className=" font-serif text-gray-200">What sets us apart from the rest.</p>
+            <h2 className="text-5xl font-bold font-serif text-white mb-4">
+              Why Choose VVRM?
+            </h2>
+            <p className=" font-serif text-gray-200">
+              What sets us apart from the rest.
+            </p>
           </motion.div>
           <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
@@ -280,10 +326,26 @@ const About = () => {
             transition={{ staggerChildren: 0.2 }}
           >
             {[
-              { icon: <FiAward />, title: "Excellence", desc: "We don't settle for 'good'. We aim for pixel-perfect." },
-              { icon: <FiCheck />, title: "Transparency", desc: "No hidden costs. Honest communication." },
-              { icon: <FiUsers />, title: "Client-Centric", desc: "Your success is our success. We work as partners." },
-              { icon: <FiGlobe />, title: "Global Standards", desc: "World-class code quality and security practices." }
+              {
+                icon: <FiAward />,
+                title: "Excellence",
+                desc: "We don't settle for 'good'. We aim for pixel-perfect.",
+              },
+              {
+                icon: <FiCheck />,
+                title: "Transparency",
+                desc: "No hidden costs. Honest communication.",
+              },
+              {
+                icon: <FiUsers />,
+                title: "Client-Centric",
+                desc: "Your success is our success. We work as partners.",
+              },
+              {
+                icon: <FiGlobe />,
+                title: "Global Standards",
+                desc: "World-class code quality and security practices.",
+              },
             ].map((item, index) => (
               <motion.div
                 key={index}
@@ -294,8 +356,12 @@ const About = () => {
                 <div className="w-12 h-12 mx-auto bg-gray-800 rounded-full flex items-center justify-center text-gray-400 group-hover:bg-vvrm-cyan group-hover:text-white transition-all mb-4">
                   {item.icon}
                 </div>
-                <h4 className="text-lg font-bold font-serif text-white mb-2">{item.title}</h4>
-                <p className="text-sm font-sans tracking-wide text-gray-200">{item.desc}</p>
+                <h4 className="text-lg font-bold font-serif text-white mb-2">
+                  {item.title}
+                </h4>
+                <p className="text-sm font-sans tracking-wide text-gray-200">
+                  {item.desc}
+                </p>
               </motion.div>
             ))}
           </motion.div>
@@ -310,8 +376,12 @@ const About = () => {
           transition={{ duration: 1 }}
           className="px-8"
         >
-          <h2 className="text-3xl md:text-5xl font-bold font-serif text-white mb-6">Ready to Digitalize Your Business?</h2>
-          <p className="text-gray-300  font-serif mb-8">Let's discuss your project and see how we can help.</p>
+          <h2 className="text-3xl md:text-5xl font-bold font-serif text-white mb-6">
+            Ready to Digitalize Your Business?
+          </h2>
+          <p className="text-gray-300  font-serif mb-8">
+            Let's discuss your project and see how we can help.
+          </p>
           <Link to="/contact">
             <button className="px-10 py-4 font-serif bg-linear-to-r text-[18px] from-vvrm-cyan to-vvrm-blue rounded-full font-bold text-white shadow-lg hover:shadow-vvrm-cyan/50 transition-all transform hover:-translate-y-1">
               Start a Conversation

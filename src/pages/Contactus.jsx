@@ -1,7 +1,13 @@
-import React from 'react';
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { FiMail, FiPhone, FiMapPin, FiArrowRight, FiCheckCircle } from 'react-icons/fi';
+import React from "react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  FiMail,
+  FiPhone,
+  FiMapPin,
+  FiArrowRight,
+  FiCheckCircle,
+} from "react-icons/fi";
 const Contact = () => {
   const [showPopup, setShowPopup] = useState(false);
   const heroVRVariant = {
@@ -9,8 +15,8 @@ const Contact = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
-    }
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
   };
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -41,10 +47,14 @@ const Contact = () => {
             Get in Touch
           </span>
           <h1 className="text-6xl md:text-7xl font-extrabold font-serif text-white mb-8 tracking-tight drop-shadow-2xl">
-            Contact <span className=" text-transparent text-[50px] font-serif bg-clip-text bg-linear-to-r from-vvrm-cyan to-vvrm-blue">VVRM</span>
+            Contact{" "}
+            <span className=" text-transparent text-[50px] font-serif bg-clip-text bg-linear-to-r from-vvrm-cyan to-vvrm-blue">
+              VVRM
+            </span>
           </h1>
           <p className="text-gray-200 font-serif text-sm md:text-xl leading-relaxed max-w-3xl mx-auto font-light">
-            You have the vision. We have the code. Let's build something that breaks the internet together ....
+            You have the vision. We have the code. Let's build something that
+            breaks the internet together ....
           </p>
         </motion.div>
       </div>
@@ -65,40 +75,72 @@ const Contact = () => {
             {/* Title */}
             <motion.div variants={heroVRVariant} className="mb-8">
               <h1 className="text-4xl md:text-5xl font-serif font-extrabold leading-tight">
-                <span className='text-transparent font-serif bg-clip-text bg-linear-to-r from-vvrm-cyan to-vvrm-blue'>Let's</span> Start a <span className='text-transparent font-sans bg-clip-text bg-linear-to-r from-vvrm-cyan to-vvrm-blue'>Conversation</span> <br />
+                <span className="text-transparent font-serif bg-clip-text bg-linear-to-r from-vvrm-cyan to-vvrm-blue">
+                  Let's
+                </span>{" "}
+                Start a{" "}
+                <span className="text-transparent font-sans bg-clip-text bg-linear-to-r from-vvrm-cyan to-vvrm-blue">
+                  Conversation
+                </span>{" "}
+                <br />
                 With Us.
               </h1>
               <p className="text-gray-200 mt-6 text-sm font-serif tracking-wider leading-loose">
-                Have a Project in mind? We had  love to hear about it. Our team is ready to help you transform your ideas into reality.
+                Have a Project in mind? We had love to hear about it. Our team
+                is ready to help you transform your ideas into reality.
               </p>
             </motion.div>
             <div className="space-y-8">
-              <motion.div variants={heroVRVariant} className="flex items-start gap-5 group">
+              <motion.div
+                variants={heroVRVariant}
+                className="flex items-start gap-5 group"
+              >
                 <div className="w-14 h-14 bg-vvrm-card border border-gray-800 rounded-2xl flex items-center justify-center text-vvrm-cyan shrink-0 text-xl group-hover:border-vvrm-cyan transition-colors">
                   <FiMail />
                 </div>
                 <div>
-                  <h4 className="text-white font-bold font-serif text-lg mb-1">Email Us</h4>
-                  <p className="text-gray-300 font-sans tracking-widest text-sm"> vvrmtechnologies@gmail.com</p>
+                  <h4 className="text-white font-bold font-serif text-lg mb-1">
+                    Email Us
+                  </h4>
+                  <p className="text-gray-300 font-sans tracking-widest text-sm">
+                    {" "}
+                    vvrmtechnologies@gmail.com
+                  </p>
                 </div>
               </motion.div>
-              <motion.div variants={heroVRVariant} className="flex items-start gap-5 group">
+              <motion.div
+                variants={heroVRVariant}
+                className="flex items-start gap-5 group"
+              >
                 <div className="w-14 h-14 bg-vvrm-card border border-gray-800 rounded-2xl flex items-center justify-center text-vvrm-cyan shrink-0 text-xl group-hover:border-vvrm-cyan transition-colors">
                   <FiPhone />
                 </div>
                 <div>
-                  <h4 className="text-white font-bold font-serif text-lg mb-1">Call Us</h4>
-                  <p className="text-gray-300 font-sans text-sm tracking-widest">+91 9499437069</p>
-                  <p className="text-gray-300 font-sans mt-2 text-sm">Mon-Fri, 9am - 6pm</p>
+                  <h4 className="text-white font-bold font-serif text-lg mb-1">
+                    Call Us
+                  </h4>
+                  <p className="text-gray-300 font-sans text-sm tracking-widest">
+                    +91 9499437069
+                  </p>
+                  <p className="text-gray-300 font-sans mt-2 text-sm">
+                    Mon-Fri, 9am - 6pm
+                  </p>
                 </div>
               </motion.div>
-              <motion.div variants={heroVRVariant} className="flex items-start gap-5 group">
+              <motion.div
+                variants={heroVRVariant}
+                className="flex items-start gap-5 group"
+              >
                 <div className="w-14 h-14 bg-vvrm-card border border-gray-800 rounded-2xl flex items-center justify-center text-vvrm-cyan shrink-0 text-xl group-hover:border-vvrm-cyan transition-colors">
                   <FiMapPin />
                 </div>
                 <div>
-                  <h4 className="text-white font-serif font-bold text-lg mb-1">Visit Us</h4>
-                  <p className="text-gray-300 font-sans mt-2 text-sm">Rohtak, Haryana, India</p>
+                  <h4 className="text-white font-serif font-bold text-lg mb-1">
+                    Visit Us
+                  </h4>
+                  <p className="text-gray-300 font-sans mt-2 text-sm">
+                    Rohtak, Haryana, India
+                  </p>
                 </div>
               </motion.div>
             </div>
@@ -114,27 +156,56 @@ const Contact = () => {
           >
             <div className=" overflow-hidden group transition-colors duration-400">
               <div className="absolute top-0 right-0 w-64 h-64  rounded-full blur-[80px] -mr-16 -mt-16 pointer-events-none"></div>
-              <form onSubmit={handleSubmit} className="space-y-6 gap-10 relative z-10">
+              <form
+                onSubmit={handleSubmit}
+                className="space-y-6 gap-10 relative z-10"
+              >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-[15px]  font-serif tracking-wider text-gray-200  ml-1">First Name</label>
-                    <input type="text" placeholder="John" className="w-full bg-vvrm-dark border border-gray-400  mt-2 rounded-xl px-4 py-4 text-white   ] outline-none transition-all placeholder-gray-600" />
+                    <label className="text-[15px]  font-serif tracking-wider text-gray-200  ml-1">
+                      First Name
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="John"
+                      className="w-full bg-vvrm-dark border border-gray-400  mt-2 rounded-xl px-4 py-4 text-white   ] outline-none transition-all placeholder-gray-600"
+                    />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-[15px]  font-serif tracking-wider text-gray-200 ml-1">Last Name</label>
-                    <input type="text" placeholder="Doe" className="w-full bg-vvrm-dark mt-2 border border-gray-400 rounded-xl px-4 py-4 text-white  ] outline-none transition-all placeholder-gray-600" />
+                    <label className="text-[15px]  font-serif tracking-wider text-gray-200 ml-1">
+                      Last Name
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Doe"
+                      className="w-full bg-vvrm-dark mt-2 border border-gray-400 rounded-xl px-4 py-4 text-white  ] outline-none transition-all placeholder-gray-600"
+                    />
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <label className="text-[15px] font-serif tracking-wider text-gray-200 ml-1">Email Address</label>
-                  <input type="email" placeholder="john@example.com" className="w-full bg-vvrm-dark mt-2 border border-gray-400 rounded-xl px-4 py-4 text-white  ] outline-none transition-all placeholder-gray-600" />
+                  <label className="text-[15px] font-serif tracking-wider text-gray-200 ml-1">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    placeholder="john@example.com"
+                    className="w-full bg-vvrm-dark mt-2 border border-gray-400 rounded-xl px-4 py-4 text-white  ] outline-none transition-all placeholder-gray-600"
+                  />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-[15px] font-serif tracking-widest text-gray-200 ml-1">Phone Number</label>
-                  <input type="tel" placeholder="+91..." className="w-full mt-2 bg-vvrm-dark border border-gray-400 rounded-xl px-4 py-4 text-white  ] outline-none transition-all placeholder-gray-600" />
+                  <label className="text-[15px] font-serif tracking-widest text-gray-200 ml-1">
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    placeholder="+91..."
+                    className="w-full mt-2 bg-vvrm-dark border border-gray-400 rounded-xl px-4 py-4 text-white  ] outline-none transition-all placeholder-gray-600"
+                  />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-[15px] font-serif tracking-widest text-gray-200 ml-1">Service Interested In</label>
+                  <label className="text-[15px] font-serif tracking-widest text-gray-200 ml-1">
+                    Service Interested In
+                  </label>
                   <select className="w-full bg-vvrm-dark mt-2 border text-sm border-gray-200 rounded-xl px-4 py-4 text-white ] outline-none transition-all cursor-pointer">
                     <option>Website Development</option>
                     <option>Android Development</option>
@@ -145,11 +216,20 @@ const Contact = () => {
                   </select>
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-semibold font-serif tracking-widest text-gray-300 ml-1">Message</label>
-                  <textarea rows="4" placeholder="Tell us about your project..." className="w-full mt-2 bg-vvrm-dark border border-gray-400 rounded-xl px-4 py-4 text-white ] outline-none transition-all placeholder-gray-600 resize-none"></textarea>
+                  <label className="text-sm font-semibold font-serif tracking-widest text-gray-300 ml-1">
+                    Message
+                  </label>
+                  <textarea
+                    rows="4"
+                    placeholder="Tell us about your project..."
+                    className="w-full mt-2 bg-vvrm-dark border border-gray-400 rounded-xl px-4 py-4 text-white ] outline-none transition-all placeholder-gray-600 resize-none"
+                  ></textarea>
                 </div>
                 <motion.button
-                  whileHover={{ scale: 1.02, boxShadow: "0 0 20px rgba(0,194,255,0.4)" }}
+                  whileHover={{
+                    scale: 1.02,
+                    boxShadow: "0 0 20px rgba(0,194,255,0.4)",
+                  }}
                   whileTap={{ scale: 0.98 }}
                   className="w-full py-4 font-serif bg-linear-to-r from-vvrm-cyan to-vvrm-blue text-white font-bold text-[18px] ] transition-all transform hover:-translate-y-0.5 flex items-center border border-vvrm-cyan/20 justify-center rounded-3xl"
                 >
@@ -183,7 +263,9 @@ const Contact = () => {
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-white">Message Sent!</h3>
-                <p className="text-gray-400 text-sm mt-1">We'll get back to you shortly.</p>
+                <p className="text-gray-400 text-sm mt-1">
+                  We'll get back to you shortly.
+                </p>
               </div>
               <motion.div
                 initial={{ width: "0%" }}

@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Sora:wght@100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Fraunces:opsz,wght,soft,wonk@9..144,100..900,0..100,0..1 night&family=Young+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@300..800&family=Manrope:wght@200..800&family=Outfit:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
 @import "tailwindcss";
 @theme {
   --color-vvrm-dark: #050810;
@@ -5,6 +10,19 @@
   --color-vvrm-cyan: #00C2FF;
   --color-vvrm-blue: #0055FF;
   --font-sans: 'Inter', sans-serif;
+
+  --font-heading: Plus Jakarta Sans, ui-sans-serif, system-ui;
+
+  --font-sora: Sora, sans-serif;
+  --font-sans: 'Inter', sans-serif;
+  --font-instrument: "Instrument Serif", serif;
+  --font-fraunces: "Fraunces", serif;
+  --font-young: "Young Serif", serif;
+  --font-outfit: Outfit, sans-serif;
+  --font-space: Space Grotesk, sans-serif;
+  --font-manrope: Manrope, sans-serif;
+  --font-host: Host Grotesk, sans-serif;
+  --font-hand: "Caveat", cursive;
 }
 // Global Styles to match the VVRM Technology theme
 body {
