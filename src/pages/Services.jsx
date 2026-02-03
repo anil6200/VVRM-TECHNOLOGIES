@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { FiCheckCircle } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 const servicesData = [
   {
     id: "01",
@@ -219,6 +220,55 @@ const ServiceSection = ({ service }) => {
 const Services = () => {
   return (
     <div className="w-full bg-vvrm-dark text-white snap-y snap-mandatory min-h-screen   scroll-smooth">
+      <Helmet>
+        <title>
+          Our Services | VVRM Technologies - Web & Mobile App Development
+        </title>
+        <meta
+          name="description"
+          content="Explore VVRM Technologies' premium services including Android & iOS App Development, Web Development, UI/UX Design, API Integration, and Secure Hosting Solutions."
+        />
+        <meta
+          name="keywords"
+          content="Android Development, iOS Development, Web Development, UI/UX Design, API Development, Server Hosting, VVRM Technologies Services"
+        />
+        <link rel="canonical" href="https://vvrmtechnologies.com/services" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://vvrmtechnologies.com/services"
+        />
+        <meta property="og:title" content="Our Services | VVRM Technologies" />
+        <meta
+          property="og:description"
+          content="Expert IT solutions: Mobile Apps, Web Platforms, and Digital Design tailored for your business growth."
+        />
+        <meta
+          property="og:image"
+          content="https://vvrmtechnologies.com/images/services/wdimg1.png"
+        />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:url"
+          content="https://vvrmtechnologies.com/services"
+        />
+        <meta
+          property="twitter:title"
+          content="VVRM Technologies | Our Expertise"
+        />
+        <meta
+          property="twitter:description"
+          content="Discover how we build scalable digital products using the latest technologies."
+        />
+        <meta
+          property="twitter:image"
+          content="https://vvrmtechnologies.com/images/services/wdimg1.png"
+        />
+      </Helmet>
       {servicesData.map((service) => (
         <ServiceSection key={service.id} service={service} />
       ))}

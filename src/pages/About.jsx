@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import posterimg from "../assets/logo/image.png";
+import { Helmet } from "react-helmet";
 import {
   FiTarget,
   FiEye,
@@ -67,6 +69,50 @@ const About = () => {
   }, []);
   return (
     <div className="w-full overflow-x-hidden bg-vvrm-dark text-white">
+      <Helmet>
+        <title>About Us | VVRM Technologies - Innovating Digital Future</title>
+        <meta
+          name="description"
+          content="Learn about VVRM Technologies, a team of passionate developers and designers. We empower businesses with scalable, secure, and innovative IT solutions."
+        />
+        <meta
+          name="keywords"
+          content="About VVRM, IT Company Profile, Web Development Team, Software Agency Rohtak, VVRM Mission Vision, Digital Transformation Partners"
+        />
+        <link rel="canonical" href="https://vvrmtechnologies.com/about" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://vvrmtechnologies.com/about" />
+        <meta
+          property="og:title"
+          content="About VVRM Technologies | Who We Are"
+        />
+        <meta
+          property="og:description"
+          content="We are innovating for a digital future. Discover our journey from a small office to a global digital agency."
+        />
+        <meta
+          property="og:image"
+          content="https://vvrmtechnologies.com/images/about/sec2img1.png"
+        />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:url"
+          content="https://vvrmtechnologies.com/about"
+        />
+        <meta property="twitter:title" content="About VVRM Technologies" />
+        <meta
+          property="twitter:description"
+          content="Excellence, Transparency, and Innovation. See why businesses choose VVRM."
+        />
+        <meta
+          property="twitter:image"
+          content="https://vvrmtechnologies.com/images/about/sec2img1.png"
+        />
+      </Helmet>
       {/* HERO SECTION*/}
       <section className="relative min-h-[85vh] bg-vvrm-dark flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -76,12 +122,12 @@ const About = () => {
             loop
             muted
             playsInline
-            preload="auto"
-            onCanPlayThrough={() => setIsVideoLoaded(true)}
+            preload="metadata"
+            onLoadedData={() => setIsVideoLoaded(true)}
             className={`w-full h-full object-cover transition-opacity duration-700 ease-in-out ${
               isVideoLoaded ? "opacity-80" : "opacity-0"
             }`}
-            poster="/images/image.png"
+            poster={posterimg}
           >
             <source src="/videos/abouthero.mp4" type="video/mp4" />
           </video>
@@ -89,7 +135,7 @@ const About = () => {
             <div
               className="absolute inset-0 bg-cover bg-center opacity-75 transition-opacity duration-700"
               style={{
-                backgroundImage: "url('/images/about-hero-poster.jpg')",
+                backgroundImage: "url(' /images/image.png')",
               }}
             ></div>
           )}

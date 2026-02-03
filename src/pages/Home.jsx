@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import {
   FiArrowRight,
   FiCheckCircle,
@@ -155,6 +156,50 @@ const Home = () => {
   ];
   return (
     <div className="w-full overflow-x-hidden bg-vvrm-dark text-white">
+      <Helmet>
+        <title>VVRM Technologies | Web & Mobile App Development Company</title>
+        <meta
+          name="description"
+          content="VVRM Technologies provides top-notch IT solutions including Android/iOS App Development, Website Design, API Integration, and Graphic Designing. Turning ideas into reality."
+        />
+        <meta
+          name="keywords"
+          content="VVRM Technologies, Web Development, Mobile App Development, Android, iOS, Graphic Design, API Development, IT Company, Software Solutions"
+        />
+        <link rel="canonical" href="https://vvrmtechnologies.com/" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://vvrmtechnologies.com/" />
+        <meta
+          property="og:title"
+          content="VVRM Technologies | Build Scalable Web & Mobile Apps"
+        />
+        <meta
+          property="og:description"
+          content="We build scalable web and mobile apps for your business. Expert solutions in Android, iOS, and Web Development."
+        />
+        <meta
+          property="og:image"
+          content="https://vvrmtechnologies.com/images/Home/heroimg1.png"
+        />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://vvrmtechnologies.com/" />
+        <meta
+          property="twitter:title"
+          content="VVRM Technologies | Innovation Meets Technology"
+        />
+        <meta
+          property="twitter:description"
+          content="End-to-end digital solutions tailored to your business needs."
+        />
+        <meta
+          property="twitter:image"
+          content="https://vvrmtechnologies.com/images/Home/heroimg1.png"
+        />
+      </Helmet>
       {/*   HERO SECTION   */}
       <section className=" relative pt-24 pb-16 lg:pt-39 lg:pb-32 px-6 sm:px-12 lg:px-24 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8 lg:gap-12 perspective-1000">
         <motion.div

@@ -19,8 +19,8 @@ const Navbar = () => {
     { name: "Home", path: "/" },
     { name: "Services", path: "/services" },
     { name: "Careers", path: "/career" },
-    { name: "Contact Us", path: "/contact" },
     { name: "About ", path: "/about" },
+    { name: "Contact Us", path: "/contact" },
   ];
   return (
     <nav
@@ -42,16 +42,16 @@ const Navbar = () => {
               className="  absolute top-1/2  -left-10 lg:-left-50 lg:-translate-y-1/2 -translate-y-10 lg:h-32 h-22 w-auto max-w-none drop-shadow-lg "
             />
           </Link>
-          <div className="hidden md:flex grow items-center">
-            <div className="flex space-x-8">
+          <div className="hidden md:flex grow lg:translate-x-33  items-center">
+            <div className="flex space-x-11">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   to={link.path}
-                  className={`text-[18px] font-serif transition-colors duration-300 relative group ${
+                  className={`text-[17px] lg:tracking-wider font-outfit transition-colors duration-300 relative group ${
                     location.pathname === link.path
                       ? "text-white"
-                      : "text-gray-400 hover:text-vvrm-cyan"
+                      : "text-gray-300 hover:text-vvrm-cyan"
                   }`}
                 >
                   {link.name}
@@ -62,7 +62,7 @@ const Navbar = () => {
               ))}
             </div>
           </div>
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden md:flex items-center lg:translate-x-42 space-x-6">
             <a
               href="https://wa.me/919499437069"
               target="_blank"
@@ -70,7 +70,7 @@ const Navbar = () => {
               className=" px-6 py-2.5 rounded-lg bg-linear-to-r from-vvrm-cyan to-vvrm-blue text-white font-bold text-sm hover:shadow-[0_0_15px_rgba(0,194,255,0.5)] transition-all transform hover:-translate-y-0.5 flex items-center border border-vvrm-cyan/20"
             >
               <FaWhatsapp size={18} className="mr-2" />
-              <span className="font-serif">WhatsApp Us</span>
+              <span className="font-space tracking-widest">WhatsApp Us</span>
             </a>
           </div>
           <div className="md:hidden flex items-center">

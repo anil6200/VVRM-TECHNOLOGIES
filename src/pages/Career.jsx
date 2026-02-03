@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Helmet } from "react-helmet";
 import {
   FiSearch,
   FiMapPin,
@@ -185,6 +186,50 @@ const Career = () => {
   };
   return (
     <div className="w-full bg-vvrm-dark text-white min-h-screen relative overflow-x-hidden">
+      <Helmet>
+        <title>Careers at VVRM Technologies | Join Our Team</title>
+        <meta
+          name="description"
+          content="Join VVRM Technologies and build the future. We are hiring Android Developers, MERN Stack Developers, and UI/UX Designers. Remote and Office roles available."
+        />
+        <meta
+          name="keywords"
+          content="VVRM Careers, IT Jobs Rohtak, Remote Developer Jobs, Android Developer, MERN Stack Job, UI/UX Designer Job, Software Engineer Careers"
+        />
+        <link rel="canonical" href="https://vvrmtechnologies.com/career" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://vvrmtechnologies.com/career" />
+        <meta
+          property="og:title"
+          content="Join VVRM Technologies | We are Hiring"
+        />
+        <meta
+          property="og:description"
+          content="Explore exciting career opportunities in Web & Mobile App Development. Work with the latest tech stack."
+        />
+        <meta
+          property="og:image"
+          content="https://vvrmtechnologies.com/images/careers/sec1img1.png"
+        />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:url"
+          content="https://vvrmtechnologies.com/career"
+        />
+        <meta property="twitter:title" content="Careers at VVRM Technologies" />
+        <meta
+          property="twitter:description"
+          content="Innovation starts here. Check out our latest job openings."
+        />
+        <meta
+          property="twitter:image"
+          content="https://vvrmtechnologies.com/images/careers/sec1img1.png"
+        />
+      </Helmet>
       {/*  HERO SECTION */}
       <section className="relative w-full h-[80vh] flex items-center justify-center overflow-hidden">
         <AnimatePresence mode="wait">

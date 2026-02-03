@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Helmet } from "react-helmet";
 import {
   FiMail,
   FiPhone,
@@ -10,6 +11,17 @@ import {
 } from "react-icons/fi";
 const Contact = () => {
   const [showPopup, setShowPopup] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    service: "Website Development",
+    message: "",
+  });
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
   const heroVRVariant = {
     hidden: { opacity: 0, y: 30 },
     visible: {
@@ -20,17 +32,79 @@ const Contact = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (
+      !formData.firstName.trim() ||
+      !formData.email.trim() ||
+      !formData.message.trim()
+    ) {
+      alert("Please fill required details first !");
+      return;
+    }
     setShowPopup(true);
-    e.target.reset();
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      service: "Website Development",
+      message: "",
+    });
     setTimeout(() => {
       setShowPopup(false);
     }, 3000);
   };
   return (
     <div className="w-full min-h-screen bg-vvrm-dark text-white">
+      <Helmet>
+        <title>Contact Us | VVRM Technologies - Start Your Project</title>
+        <meta
+          name="description"
+          content="Get in touch with VVRM Technologies for expert Web Development, App Development, and API solutions. Let's discuss your project ideas today."
+        />
+        <meta
+          name="keywords"
+          content="Contact VVRM, IT Company Rohtak, Hire Developers, Web Design Quote, App Development Enquiry, Software Company Contact"
+        />
+        <link rel="canonical" href="https://vvrmtechnologies.com/contact" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://vvrmtechnologies.com/contact"
+        />
+        <meta property="og:title" content="Contact Us | VVRM Technologies" />
+        <meta
+          property="og:description"
+          content="Ready to build something amazing? Contact our team for a free consultation and quote."
+        />
+        <meta
+          property="og:image"
+          content="https://vvrmtechnologies.com/images/contactus/img1.png"
+        />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:url"
+          content="https://vvrmtechnologies.com/contact"
+        />
+        <meta
+          property="twitter:title"
+          content="Get in Touch with VVRM Technologies"
+        />
+        <meta
+          property="twitter:description"
+          content="We are ready to help you transform your ideas into reality. Reach out to us now."
+        />
+        <meta
+          property="twitter:image"
+          content="https://vvrmtechnologies.com/images/contactus/img1.png"
+        />
+      </Helmet>
       {/*   SECTION 1: HERO HEADER    */}
       <div
-        className="relative w-full h-[75vh] lg:h-[85vh] flex items-center justify-center bg-cover bg-center bg-fixed"
+        className="relative w-full h-[75vh] lg:h-[85vh] flex items-center justify-center bg-cover bg-center lg:bg-fixed"
         style={{
           backgroundImage: " url('/images/contactus/img1.png')",
         }}
@@ -102,7 +176,7 @@ const Contact = () => {
                   <h4 className="text-white font-bold font-serif text-lg mb-1">
                     Email Us
                   </h4>
-                  <p className="text-gray-300 font-sans tracking-widest text-sm">
+                  <p className="text-gray-300 font-sans tracking-widest text-[11px] lg:text-sm">
                     {" "}
                     vvrmtechnologies@gmail.com
                   </p>
@@ -119,7 +193,7 @@ const Contact = () => {
                   <h4 className="text-white font-bold font-serif text-lg mb-1">
                     Call Us
                   </h4>
-                  <p className="text-gray-300 font-sans text-sm tracking-widest">
+                  <p className="text-gray-300 font-sans lg:text-sm text-[11px] tracking-widest">
                     +91 9499437069
                   </p>
                   <p className="text-gray-300 font-sans mt-2 text-sm">
@@ -166,6 +240,10 @@ const Contact = () => {
                       First Name
                     </label>
                     <input
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleChange}
+                      required
                       type="text"
                       placeholder="John"
                       className="w-full bg-vvrm-dark border border-gray-400  mt-2 rounded-xl px-4 py-4 text-white   ] outline-none transition-all placeholder-gray-600"
@@ -176,6 +254,9 @@ const Contact = () => {
                       Last Name
                     </label>
                     <input
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleChange}
                       type="text"
                       placeholder="Doe"
                       className="w-full bg-vvrm-dark mt-2 border border-gray-400 rounded-xl px-4 py-4 text-white  ] outline-none transition-all placeholder-gray-600"
@@ -187,9 +268,13 @@ const Contact = () => {
                     Email Address
                   </label>
                   <input
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     type="email"
                     placeholder="john@example.com"
                     className="w-full bg-vvrm-dark mt-2 border border-gray-400 rounded-xl px-4 py-4 text-white  ] outline-none transition-all placeholder-gray-600"
+                    required
                   />
                 </div>
                 <div className="space-y-2">
@@ -197,16 +282,25 @@ const Contact = () => {
                     Phone Number
                   </label>
                   <input
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
                     type="tel"
                     placeholder="+91..."
                     className="w-full mt-2 bg-vvrm-dark border border-gray-400 rounded-xl px-4 py-4 text-white  ] outline-none transition-all placeholder-gray-600"
+                    required
                   />
                 </div>
                 <div className="space-y-2">
                   <label className="text-[15px] font-serif tracking-widest text-gray-200 ml-1">
                     Service Interested In
                   </label>
-                  <select className="w-full bg-vvrm-dark mt-2 border text-sm border-gray-200 rounded-xl px-4 py-4 text-white ] outline-none transition-all cursor-pointer">
+                  <select
+                    name="service"
+                    value={formData.service}
+                    onChange={handleChange}
+                    className="w-full bg-vvrm-dark mt-2 border text-sm border-gray-200 rounded-xl px-4 py-4 text-white ] outline-none transition-all cursor-pointer"
+                  >
                     <option>Website Development</option>
                     <option>Android Development</option>
                     <option>Graphic Designing</option>
@@ -220,9 +314,13 @@ const Contact = () => {
                     Message
                   </label>
                   <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
                     rows="4"
                     placeholder="Tell us about your project..."
                     className="w-full mt-2 bg-vvrm-dark border border-gray-400 rounded-xl px-4 py-4 text-white ] outline-none transition-all placeholder-gray-600 resize-none"
+                    required
                   ></textarea>
                 </div>
                 <motion.button
@@ -262,8 +360,8 @@ const Contact = () => {
                 <FiCheckCircle className="text-vvrm-cyan text-3xl" />
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-white">Message Sent!</h3>
-                <p className="text-gray-400 text-sm mt-1">
+                <h3 className="text-2xl font-mono text-white">Message Sent!</h3>
+                <p className="text-gray-400 font-space text-sm mt-1">
                   We'll get back to you shortly.
                 </p>
               </div>
